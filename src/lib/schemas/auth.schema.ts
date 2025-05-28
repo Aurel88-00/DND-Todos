@@ -3,7 +3,7 @@ import { Roles } from '../enums/roles.enum';
 
 @Schema()
 export class Auth {
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   username: string;
 
   @Prop({ required: true })
@@ -14,6 +14,7 @@ export class Auth {
 
   @Prop({ required: true })
   role: Roles;
+
 }
 
 export const AuthSchema = SchemaFactory.createForClass(Auth);
